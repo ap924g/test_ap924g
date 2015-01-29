@@ -11,3 +11,11 @@ cron "test" do
  hour "10"
  command "/tmp/1.sh"
 end
+
+cookbook_file "abcd.txt" do
+  path "/tmp"
+  action :create
+#  owner "root"
+#  group "root"
+#  files_mode "755"
+end
