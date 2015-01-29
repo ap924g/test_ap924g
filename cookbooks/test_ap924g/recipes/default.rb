@@ -15,7 +15,22 @@ end
 cookbook_file "abcd.txt" do
   path "/tmp/abcd"
   action :create
-#  owner "root"
-#  group "root"
-#  files_mode "755"
+  owner "root"
+  group "root"
+  mode "0755"
 end
+
+remote_directory "check" do
+ path "/tmp"
+end
+
+file "/tmp/abcd" do
+ action :delete
+end
+
+directory "/tmp/check" do
+end
+
+#package "jdk-7u75-linux-i586.rpm" do
+# version "1.7.0_07"
+#end
