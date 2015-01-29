@@ -13,7 +13,7 @@ cron "test" do
 end
 
 cookbook_file "abcd.txt" do
-  path "/tmp"
+  path "/tmp/abcd"
   action :create
 #  owner "root"
 #  group "root"
