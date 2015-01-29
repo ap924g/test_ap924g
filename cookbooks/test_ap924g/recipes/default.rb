@@ -10,4 +10,4 @@ cron "test" do
  minute "10"
  hour "10"
  command "/tmp/1.sh"
-done
+end
