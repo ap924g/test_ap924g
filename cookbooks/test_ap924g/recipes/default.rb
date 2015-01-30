@@ -31,6 +31,3 @@ end
 directory "/tmp/check" do
 end
 
-#package "jdk-7u75-linux-i586.rpm" do
-# version "1.7.0_07"
-#end

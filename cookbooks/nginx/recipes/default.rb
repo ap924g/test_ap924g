@@ -1,4 +1,3 @@
-#
 # Cookbook Name:: nginx
 # Recipe:: default
 #
@@ -6,15 +5,20 @@
 #
 # All rights reserved - Do Not Redistribute
 #
-package "nginx" do
+package "haproxy" do
+# version-release "1.5-dev19" 
+# release "2013/06/17"
+# version "10.16.2"
+# release "1.7.3"
  action :install
 end
 
-service "nginx" do
+template "haproxy.cfg" do
+ source "haproxy.cfg.erb"
+ path "/etc/haproxy/haproxy.cfg"
+end
+
+service 'haproxy' do
  action [:enable, :start]
 end
 
-cookbook_file "/usr/share/nginx/www/index.html" do
- source "index.html"
- mode "0775"
-end
